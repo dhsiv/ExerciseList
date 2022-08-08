@@ -20,7 +20,7 @@ function getList() {
   } else {
     exercises = JSON.parse(localStorage.getItem("exercises"));
   }
-  exercises.foreach(function (exercise) {
+  exercises.forEach(function (exercise) {
     // Create li
     const li = document.createElement("li");
     // Create Class for li
