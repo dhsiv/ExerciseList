@@ -1,5 +1,5 @@
 const addExercise = document.getElementById("addButton");
-let workoutInput = document.getElementById("exerciseName");
+const workoutInput = document.getElementById("exerciseName");
 const exerciseList = document.querySelector(".exerciseList");
 
 loadEventListeners();
