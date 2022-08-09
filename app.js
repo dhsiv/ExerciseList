@@ -31,7 +31,7 @@ function getList() {
     exerciseList.appendChild(li);
   });
 }
-console.log("exercises");
+
 //*** ADDING EXERCISE INPUT TO DOM UL ***//
 function addToList() {
   if (workoutInput.value === "") {
@@ -51,7 +51,7 @@ function addToList() {
   exerciseStorage(workoutInput.value);
 
   // clear input
-  workoutInput = "";
+  workoutInput.value = "";
 }
 
 //*** FUNCTION TO ADD TO LOCALSTORAGE ***//
@@ -69,3 +69,6 @@ function exerciseStorage(exercise) {
   // Add item
   // Append item to
 }
+
+// Remove item on X click
+function removeExercise() {}
