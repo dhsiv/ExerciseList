@@ -1,6 +1,7 @@
 const addExercise = document.getElementById("addButton");
 const workoutInput = document.getElementById("exerciseName");
 const exerciseList = document.querySelector(".exerciseList");
+const clearList = document.getElementById("clearButton");
 
 loadEventListeners();
 
@@ -10,6 +11,11 @@ function loadEventListeners() {
 
   // Add Exercise from input
   addExercise.addEventListener("click", addToList);
+
+  // Remove Item
+
+  // Clear List
+  clearList.addEventListener("click", clearListItems);
 }
 
 //*** GETTING ITEMS FROM LOCAL STORAGE AND POPULATING UL ***//
@@ -29,10 +35,13 @@ function getList() {
     li.appendChild(document.createTextNode(exercise));
     // Append li to ul
     exerciseList.appendChild(li);
-
+    // Create Remove
     const removeLink = document.createElement("a");
+    // Add class to removal link
     removeLink.className = "removeExercise";
+    // Apply <i> to innerHTML
     removeLink.innerHTML = '<i class="fa fa-remove"></i>';
+    // Append to li
     li.appendChild(removeLink);
   });
 }
@@ -41,6 +50,7 @@ function getList() {
 function addToList() {
   if (workoutInput.value === "") {
     alert("Please add an exercise");
+    return;
   }
 
   // Create li
@@ -85,3 +95,9 @@ function exerciseStorage(exercise) {
 
 // Remove item on X click
 function removeExercise() {}
+
+// Clear List
+function clearListItems() {
+  exerciseList.innerHTML = "";
+  return localStorage.clear();
+}
