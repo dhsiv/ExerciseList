@@ -29,6 +29,11 @@ function getList() {
     li.appendChild(document.createTextNode(exercise));
     // Append li to ul
     exerciseList.appendChild(li);
+
+    const removeLink = document.createElement("a");
+    removeLink.className = "removeExercise";
+    removeLink.innerHTML = '<i class="fa fa-remove"></i>';
+    li.appendChild(removeLink);
   });
 }
 
@@ -46,6 +51,14 @@ function addToList() {
   li.appendChild(document.createTextNode(workoutInput.value));
   // Append li to ul
   exerciseList.appendChild(li);
+  // Create remove
+  const removeLink = document.createElement("a");
+  // Add class to removal link
+  removeLink.className = "removeExercise";
+  // Apply <i> to innerHTML
+  removeLink.innerHTML = '<i class="fa fa-remove"></i>';
+  // Append to li
+  li.appendChild(removeLink);
 
   // Add to local storage
   exerciseStorage(workoutInput.value);
